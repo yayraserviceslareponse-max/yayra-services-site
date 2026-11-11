@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - YAYRA SERVICES</title>
+    <!-- Intégration du client Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8fafc; margin: 0; padding: 0; }
+        .login-container, .admin-dashboard { max-width: 600px; margin: 4rem auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .hidden { display: none; }
+        input, button { width: 100%; padding: 0.8rem; margin: 0.5rem 0; border: 1px solid #cbd5e1; border-radius: 4px; box-sizing: border-box; }
+        button { background: #0284c7; color: white; border: none; font-weight: bold; cursor: pointer; }
+        button:hover { background: #0369a1; }
+        h2 { color: #0f172a; }
+        .back-link { display: inline-block; margin-bottom: 1rem; color: #0284c7; text-decoration: none; font-weight: 600; }
+    </style>
+</head>
+<body>
+
+    <div class="container" style="max-width: 600px;">
+        <a href="index.html" class="back-link">&larr; Retour au site public</a>
+    </div>
+
+    <!-- SECTION CONNEXION -->
+    <div id="login-section" class="login-container">
+        <h2>Espace Administrateur</h2>
+        <p>Veuillez vous connecter pour accéder au tableau de bord.</p>
+        <form id="login-form">
+            <input type="email" id="email" placeholder="Email administrateur" required>
+            <input type="password" id="password" placeholder="Mot de passe" required>
+            <button type="submit">Se connecter</button>
+        </form>
+        <p id="error-msg" style="color: red;"></p>
+    </div>
+
+    <!-- SECTION TABLEAU DE BORD (Masquée par défaut) -->
+    <div id="dashboard-section" class="admin-dashboard hidden">
+        <h2>Tableau de Bord - YAYRA SERVICES</h2>
+        <p>Bienvenue dans votre espace sécurisé.</p>
+        <button id="logout-btn" style="background: #ef4444;">Se déconnecter</button>
+        
+        <hr style="margin: 2rem 0;">
+        <h3>Gestion des données</h3>
+        <p>Votre connexion Supabase est active. Vous pouvez gérer vos enregistrements et services d'ici.</p>
+    </div>
+
+    <script>
+        // Remplacez ces valeurs par vos propres clés de projet Supabase
+        const SUPABASE_URL = 'VOTRE_SUPABASE_URL';
+        const SUPABASE_ANON_KEY = 'VOTRE_SUPABASE_ANON_KEY';
+        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        const loginForm = document.getElementById('login-form');
+        const loginSection = document.getElementById('login-section');
+        const dashboardSection = document.getElementById('dashboard-section');
+        const logoutBtn = document.getElementById('logout-btn');
+        const errorMsg = document.getElementById('error-msg');
+
+        async function checkUser() {
+            const { data: { session } } = await supabaseClient.auth.getSession();
+            if (session) {
+                loginSection.classList.add('hidden');
+                dashboardSection.classList.remove('hidden');
+            }
+        }
+        checkUser();
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+            
+            if (error) {
+                errorMsg.textContent = "Erreur de connexion : " + error.message;
+            } else {
+                loginSection.classList.add('hidden');
+                dashboardSection.classList.remove('hidden');
+            }
+        });
+
+        logoutBtn.addEventListener('click', async () => {
+            await supabaseClient.auth.signOut();
+            dashboardSection.classList.add('hidden');
+            loginSection.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
+

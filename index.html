@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAYRA SERVICES – LA RÉPONSE</title>
+    <style>
+        :root {
+            --primary-color: #0284c7;
+            --secondary-color: #0f172a;
+            --accent-color: #f59e0b;
+            --bg-light: #f8fafc;
+            --text-color: #334155;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, var(--secondary-color), #1e293b);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+        header h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 2.5rem;
+            color: #38bdf8;
+        }
+        header p {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--accent-color);
+        }
+        nav {
+            background-color: var(--secondary-color);
+            padding: 0.5rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--accent-color);
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 2rem 1rem;
+        }
+        section {
+            background: white;
+            margin-bottom: 2rem;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .service-card {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--primary-color);
+        }
+        .service-card h3 {
+            margin-top: 0;
+            color: var(--secondary-color);
+        }
+        .service-card ul {
+            padding-left: 1.2rem;
+            margin-bottom: 0;
+        }
+        .service-card li {
+            margin-bottom: 0.4rem;
+        }
+        ul.simple-list {
+            padding-left: 1.5rem;
+        }
+        ul.simple-list li {
+            margin-bottom: 0.5rem;
+        }
+        .contact-info {
+            background: #e0f2fe;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid #bae6fd;
+        }
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+        footer p {
+            margin: 0.3rem 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>YAYRA SERVICES – LA RÉPONSE</h1>
+        <p>Vos idées prennent forme, notre savoir-faire les réalise !</p>
+    </header>
+
+    <nav>
+        <a href="#about">Qui sommes-nous</a>
+        <a href="#services">Nos Services</a>
+        <a href="#engagement">Notre Engagement</a>
+        <a href="#contact">Contactez-nous</a>
+        <a href="admin.html" style="color: #38bdf8;">Admin</a>
+    </nav>
+
+    <div class="container">
+        
+        <!-- QUI SOMMES-NOUS -->
+        <section id="about">
+            <h2>QUI SOMMES-NOUS ?</h2>
+            <p><strong>YAYRA SERVICES – LA RÉPONSE</strong> est une entreprise multiservices spécialisée dans les prestations informatiques, la photographie, l'infographie, l'impression et la communication visuelle.</p>
+            <p>Notre mission est d'offrir aux particuliers, entreprises, associations, établissements scolaires et organisations des solutions professionnelles, innovantes et accessibles.</p>
+            <p>Grâce à notre savoir-faire, notre créativité et notre engagement pour la qualité, nous mettons tout en œuvre pour satisfaire les besoins de notre clientèle.</p>
+        </section>
+
+        <!-- NOS SERVICES -->
+        <section id="services">
+            <h2>NOS SERVICES</h2>
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <h3>1. Informatique</h3>
+                    <ul>
+                        <li>Installation et maintenance informatique.</li>
+                        <li>Dépannage d'ordinateurs.</li>
+                        <li>Installation de logiciels et systèmes.</li>
+                        <li>Assistance et conseils informatiques.</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>2. Infographie & Design</h3>
+                    <ul>
+                        <li>Création de logos.</li>
+                        <li>Conception d'affiches publicitaires.</li>
+                        <li>Cartes de visite et invitations.</li>
+                        <li>Création de flyers, dépliants et brochures.</li>
+                        <li>Conception de supports de communication.</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>3. Photographie</h3>
+                    <ul>
+                        <li>Photos d'identité et photos passeport.</li>
+                        <li>Portraits professionnels.</li>
+                        <li>Couverture photographique d'événements.</li>
+                        <li>Retouche et restauration de photographies.</li>
+                        <li>Agrandissement et impression de photos.</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>4. Photocopie & Impression</h3>
+                    <ul>
+                        <li>Photocopie noir et blanc et couleur.</li>
+                        <li>Impression de documents.</li>
+                        <li>Impression de supports publicitaires.</li>
+                        <li>Numérisation et traitement de documents.</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>5. Sérigraphie & Personnalisation</h3>
+                    <ul>
+                        <li>Impression sur T-shirts.</li>
+                        <li>Personnalisation de vêtements.</li>
+                        <li>Impression sur textiles et supports divers.</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>6. Impression Grand Format</h3>
+                    <ul>
+                        <li>Impression sur bâches.</li>
+                        <li>Banderoles publicitaires.</li>
+                        <li>Affiches grand format.</li>
+                        <li>Panneaux et supports publicitaires.</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>7. Plastification & Finition</h3>
+                    <ul>
+                        <li>Plastification de documents.</li>
+                        <li>Protection de photos et cartes.</li>
+                        <li>Finition et mise en valeur de documents.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- NOTRE ENGAGEMENT -->
+        <section id="engagement">
+            <h2>NOTRE ENGAGEMENT</h2>
+            <p>Chez YAYRA SERVICES – LA RÉPONSE, nous privilégions :</p>
+            <ul class="simple-list">
+                <li>La qualité du travail.</li>
+                <li>Le professionnalisme.</li>
+                <li>La créativité et l'innovation.</li>
+                <li>Le respect des délais.</li>
+                <li>Des tarifs accessibles.</li>
+                <li>La satisfaction de nos clients.</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem; color: var(--secondary-color);">POURQUOI NOUS CHOISIR ?</h3>
+            <p>Parce que nous sommes déterminés à transformer vos idées en réalisations concrètes. Nous vous accompagnons avec sérieux et professionnalisme pour tous vos besoins en informatique, photographie, impression et communication visuelle.</p>
+        </section>
+
+        <!-- CONTACTEZ-NOUS -->
+        <section id="contact">
+            <h2>CONTACTEZ-NOUS</h2>
+            <p>Vous avez un projet ou besoin d'une prestation ? Notre équipe est à votre écoute.</p>
+            
+            <div class="contact-info">
+                <p><strong>Entreprise :</strong> YAYRA SERVICES – LA RÉPONSE</p>
+                <p><strong>Site internet :</strong> <a href="https://yayraservices.netlify.app" target="_blank">https://yayraservices.netlify.app</a>[span_2](start_span)[span_2](end_span)</p>
+                <p><strong>WhatsApp :</strong> +229 01 97 71 06 10 / +228 99 88 53 51</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p><strong>YAYRA SERVICES – LA RÉPONSE</strong></p>
+        <p><em>« Votre satisfaction, notre priorité ! »</em></p>
+        <p style="font-size: 0.9rem; margin-top: 1rem; color: #94a3b8;">&copy; 2026 - Tous droits réservés</p>
+    </footer>
+
+</body>
+</html>
+
